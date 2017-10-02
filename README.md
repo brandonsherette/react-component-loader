@@ -6,6 +6,9 @@ Shows loading spinner when data is being loaded. Reveals content once data is lo
 ### Features
 - Added showContentOnError property to ComponentLoader.
 
+### Updates
+- Updated ComponentLoader's error property to now accept Node values.
+
 ## v0.1.0
 ### Features
 - ComponentLoader Component created.
