@@ -2,6 +2,10 @@
 Shows loading spinner when data is being loaded. Reveals content once data is loaded.
 
 # Versions
+## v0.1.2
+### Bugs/Fixes
+- Fixed issue with package not using correct filename.
+
 ## v0.1.1
 ### Features
 - Added showContentOnError property to ComponentLoader.

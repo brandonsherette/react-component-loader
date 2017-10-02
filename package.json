@@ -1,8 +1,8 @@
 {
   "name": "react-component-loader",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "React Component Loader",
-  "main": "dist/react-component-loader.js",
+  "main": "dist/react-component-loader.min.js",
   "scripts": {
     "build": "./node_modules/.bin/webpack -p --config webpack.production.config.js --progress --colors",
     "dev": "./node_modules/.bin/webpack-dev-server --content-base src/ --config webpack.config.js --inline --hot",
