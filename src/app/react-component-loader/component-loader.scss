@@ -1,0 +1,13 @@
+.component-loader {
+  .spinner-wrapper {
+    position: relative;
+    padding: 15px;
+
+    .spinner {
+      position: relative;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, 0%);
+    }
+  }
+}
