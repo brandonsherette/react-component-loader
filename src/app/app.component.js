@@ -10,6 +10,7 @@ class AppComponent extends Component {
       isLoaded: false,
       handleReload: null,
       loadingTitle: 'Loading...',
+      showContentOnError: false,
     };
   }
 
@@ -18,7 +19,7 @@ class AppComponent extends Component {
   }
 
   render() {
-    const { errorLoading, handleReload, isLoaded, loadingTitle } = this.state;
+    const { errorLoading, handleReload, isLoaded, loadingTitle, showContentOnError } = this.state;
 
     return (
       <div className="app-component container text-center">
@@ -30,6 +31,7 @@ class AppComponent extends Component {
               handleReload: null,
               isLoaded: false,
               loadingTitle: "Loading...",
+              showContentOnError: false,
             })}
             type="button"
             className="btn btn-primary">Loading (w/ title)</button>
@@ -39,6 +41,7 @@ class AppComponent extends Component {
               handleReload: null,
               isLoaded: false,
               loadingTitle: null,
+              showContentOnError: false,
             })}
             type="button"
             className="btn btn-primary">Loading (w/out title)</button>
@@ -48,6 +51,7 @@ class AppComponent extends Component {
               handleReload: null,
               isLoaded: true,
               loadingTitle: "Loading...",
+              showContentOnError: false,
             })}
             type="button"
             className="btn btn-primary">Loaded</button>
@@ -57,6 +61,7 @@ class AppComponent extends Component {
               handleReload: null,
               isLoaded: false,
               loadingTitle: "Loading...",
+              showContentOnError: false,
             })}
             type="button"
             className="btn btn-primary">Error w/o Reload</button>
@@ -66,11 +71,28 @@ class AppComponent extends Component {
               handleReload: () => { console.debug('Handle Reload'); },
               isLoaded: false,
               loadingTitle: "Loading...",
+              showContentOnError: false,
             })}
             type="button"
             className="btn btn-primary">Error w/ Reload</button>
+          <button
+            onClick={this.handleUpdateState.bind(this, {
+              errorLoading: (<h1><i className="fa fa-times-circle"></i>&nbsp;Error Loading</h1>),
+              handleReload: () => { console.debug('Handle Reload'); },
+              isLoaded: false,
+              loadingTitle: "Loading...",
+              showContentOnError: true,
+            })}
+            type="button"
+            className="btn btn-primary">Error Show Content</button>
         </div>
-        <ComponentLoader error={errorLoading} handleReload={handleReload} isLoaded={isLoaded} loadingTitle={loadingTitle}>
+        <ComponentLoader 
+          error={errorLoading} 
+          handleReload={handleReload} 
+          isLoaded={isLoaded} 
+          loadingTitle={loadingTitle}
+          showContentOnError={showContentOnError}
+        >
           <h1>Component Loaded!</h1>
           <p>Content will not be seen since isLoaded is set to false.</p>
         </ComponentLoader>

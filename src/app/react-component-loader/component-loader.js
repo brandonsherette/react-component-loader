@@ -6,13 +6,13 @@ require('./component-loader.scss');
 
 class ComponentLoader extends Component {
   render() {
-    const { children, error, handleReload, isLoaded, loadingTitle } = this.props;
+    const { children, error, handleReload, isLoaded, loadingTitle, showContentOnError } = this.props;
 
     if (error) {
       return (
-        <div className="component-loader text-center">
-          <div className="alert alert-danger">
-            <p>{error}</p>
+        <div className="component-loader">
+          <div className="alert alert-danger text-center">
+            <div>{error}</div>
             {handleReload && (
               <div>
                 <br />
@@ -20,6 +20,12 @@ class ComponentLoader extends Component {
               </div>
             )}
           </div>
+          {showContentOnError && (
+            <div>
+              <br />
+              {children}
+            </div>
+          )}
         </div>
       );
     }
@@ -41,16 +47,18 @@ class ComponentLoader extends Component {
 }
 
 ComponentLoader.propTypes = {
-  error: PropTypes.string,
+  error: PropTypes.any,
   handleReload: PropTypes.func,
   isLoaded: PropTypes.bool.isRequired,
   loadingTitle: PropTypes.string,
+  showContentOnError: PropTypes.bool,
 }
 
 ComponentLoader.defaultProps = {
   error: null,
   handleReload: null,
   loadingTitle: null,
+  showContentOnError: false,
 }
 
 export default ComponentLoader;

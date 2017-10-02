@@ -2,6 +2,10 @@
 Shows loading spinner when data is being loaded. Reveals content once data is loaded.
 
 # Versions
+## v0.1.1
+### Features
+- Added showContentOnError property to ComponentLoader.
+
 ## v0.1.0
 ### Features
 - ComponentLoader Component created.
@@ -11,7 +15,7 @@ Shows loading spinner when data is being loaded. Reveals content once data is lo
 - loadingTitle property added to ComponentLoader
 
 # ComponentLoader Props
-- error: String (optional)
+- error: String|Node (optional)
   - The loading error to display if there is one.
 - handleReload: Function (optional)
   - The function to call if the reload/retry button is pressed.
@@ -19,6 +23,8 @@ Shows loading spinner when data is being loaded. Reveals content once data is lo
   - Whether or not your data is loaded and ready to display the children elements.
 - loadingTitle: String (optional)
   - The title to display under the loading icon (spinner).
+- showContentOnError: Boolean (optional Default: true).
+  - Whether or not to show the children content if there is an error. Usefull for forms.
 
 # Example
 ```js
@@ -35,9 +41,10 @@ export default () => (
     }}
     isLoaded={false} 
     loadingTitle="Loading..."
+    showContentOnError={false}
   >
     <h1>Component Loaded!</h1>
-    <p>Content will not be seen since isLoaded is set to false.</p>
+    <p>Content will not be seen since isLoaded is set to false, unless showContentOnError is set to true.</p>
   </ComponentLoader>
 );
 ```
