@@ -2,6 +2,10 @@
 Shows loading spinner when data is being loaded. Reveals content once data is loaded.
 
 # Versions
+## v0.1.3
+### Updates
+- Content will no longer has a break before it's displayed.
+
 ## v0.1.2
 ### Bugs/Fixes
 - Fixed issue with package not using correct filename.

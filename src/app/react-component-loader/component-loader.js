@@ -14,15 +14,13 @@ class ComponentLoader extends Component {
           <div className="alert alert-danger text-center">
             <div>{error}</div>
             {handleReload && (
-              <div>
-                <br />
+              <div className="btn-reload-wrapper">
                 <button type="button" className="btn btn-primary" onClick={handleReload}><i className="fa fa-refresh"></i>&nbsp;Retry</button>
               </div>
             )}
           </div>
           {showContentOnError && (
             <div>
-              <br />
               {children}
             </div>
           )}
