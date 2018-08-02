@@ -3,7 +3,7 @@ const config = require('./config.js');
 const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const dependencies = require('./package.json').dependencies;
+const dependencies = require('./package.json').peerDependencies;
 const externals = {};
 const allDependencies = Object.assign({}, dependencies, {
   /* add css dependencies */
