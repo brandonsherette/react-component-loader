@@ -2,6 +2,11 @@
 Shows loading spinner when data is being loaded. Reveals content once data is loaded.
 
 # Versions
+## v0.1.4
+### Updates
+- Updated to allow React v16.
+- Moved dependencies to peerDependencies.
+
 ## v0.1.3
 ### Updates
 - Content will no longer has a break before it's displayed.

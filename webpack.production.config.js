@@ -4,8 +4,9 @@ const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const dependencies = require('./package.json').dependencies;
+const peerDependencies = require('./package.json').peerDependencies;
 const externals = {};
-const allDependencies = Object.assign({}, dependencies, {
+const allDependencies = Object.assign({}, dependencies, peerDependencies, {
   /* add css dependencies */
 });
 

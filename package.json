@@ -1,6 +1,6 @@
 {
   "name": "react-component-loader",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "React Component Loader",
   "main": "dist/react-component-loader.min.js",
   "scripts": {
@@ -13,12 +13,12 @@
   "keywords": [],
   "author": "Brandon Sherette <brandonsherette@gmail.com>",
   "license": "ISC",
-  "dependencies": {
+  "peerDependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.6.0",
-    "react": "^15.4.2",
+    "react": "^15.4.2 || 16.0.0",
     "react-addons-css-transition-group": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2 || ^16.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.24.0",
@@ -30,6 +30,9 @@
     "extract-text-webpack-plugin": "^2.0.0-rc.3",
     "file-loader": "^0.10.0",
     "node-sass": "^4.5.0",
+    "react": "^15.4.2 || 16.0.0",
+    "react-addons-css-transition-group": "^15.4.2",
+    "react-dom": "^15.4.2 || ^16.0.0",
     "resolve-url-loader": "^2.0.0",
     "sass-loader": "^6.0.1",
     "style-loader": "^0.13.1",
